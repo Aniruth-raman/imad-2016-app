@@ -4,13 +4,26 @@ var path = require('path');
 
 var app = express();
 app.use(morgan('combined'));
-  var articleOne = {
+  var articles={
+      
+'article-one':{
    title: 'Article One | Aniruth',
    heading: 'Article One',
    date: 'Sep 27, 2016',
-   content: `
-       <p>
-           This is the content for my first article. </p>`
+   content:`<p>This is the content for my first article.</p>`
+ },
+ 'article-two':{
+   title: 'Article Two | Aniruth',
+   heading: 'Article Two',
+   date: 'Sep 27, 2016',
+   content:`<p>This is the content for my second article.</p>`
+ },
+ 'article-three':{
+   title: 'Article Three | Aniruth',
+   heading: 'Article Three',
+   date: 'Sep 27, 2016',
+   content:`<p>This is the content for my third article.</p>`
+ },
  };
  
  function createTemplate (data) {
@@ -63,7 +76,13 @@ app.get('/ui/madi.png', function (req, res) {
 });
 
 app.get('/article-one.html', function (req, res) {
-  res.send(createTemplate(articleOne));
+  res.send(createTemplate(article-one));
+});
+app.get('/article-two.html', function (req, res) {
+  res.send(createTemplate(article-two));
+});
+app.get('/article-three.html', function (req, res) {
+  res.send(createTemplate(article-three));
 });
 
 var port = 8080; // Use 8080 for local development because you might already have apache running on 80
