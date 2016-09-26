@@ -23,7 +23,7 @@ app.use(morgan('combined'));
    heading: 'Article Three',
    date: 'Sep 27, 2016',
    content:`<p>This is the content for my third article.</p>`
- },
+ }
  };
  
  function createTemplate (data) {
