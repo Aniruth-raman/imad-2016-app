@@ -5,7 +5,7 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
   var articles={
-'article-one':{
+/*'article-one':{
    title: 'Article One | Aniruth',
    heading: 'Article One',
    date: 'Sep 27, 2016',
@@ -60,7 +60,7 @@ app.use(morgan('combined'));
      `;
      return htmlTemplate;
  }
- 
+ */
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
