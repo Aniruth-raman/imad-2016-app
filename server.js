@@ -4,7 +4,7 @@ var path = require('path');
 
 var app = express();
 app.use(morgan('combined'));
-/*  var articles={
+var articles={
 'article-one':{
    title: 'Article One | Aniruth',
    heading: 'Article One',
@@ -60,7 +60,6 @@ app.use(morgan('combined'));
      `;
      return htmlTemplate;
  }
- */
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
@@ -72,8 +71,8 @@ app.get('/ui/style.css', function (req, res) {
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
-var articlename = req.params.articlename;
 app.get('/:articlename', function (req, res) {
+var articlename = req.params.articlename;
   res.send(createTemplate(articles[articlename]));
 });
 /*app.get('/article-two.html', function (req, res) {
