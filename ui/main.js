@@ -1,2 +1,2 @@
 console.log('Loaded!');
-alert('Hi,I\'m Aniruth')
+alert('Hi,I\'m Aniruth');
