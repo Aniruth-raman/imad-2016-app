@@ -3,6 +3,10 @@ alert('Hi,I\'m Aniruth');
 var element=document.getElementById('main-text');
 element.innerHTML="newvalue";
 var img=document.getElementById("madi");
+function moveright(){
+    marginLeft+=1;
+    img.style.marginLeft='marginLeft'+'px';
+}
 img.onclick=function(){
-    img.style.marginLeft='100px';
+    var interval=setInterval(moveright,50);
 };
