@@ -1,4 +1,4 @@
-console.log('Loaded!');
+/*console.log('Loaded!');
 alert('Hi,I\'m Aniruth');
 var element=document.getElementById('main-text');
 element.innerHTML="newvalue";
@@ -10,4 +10,10 @@ function moveright(){
 }
 img.onclick=function(){
     var interval=setInterval(moveright,50);
-};
+};*/
+var counter=0;
+var button=document.getElementById('counter');
+button.onclick(function(){
+   var span=document.getElementById('count');
+   span.innerHtml=counter.toString();
+});
