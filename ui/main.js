@@ -1,4 +1,4 @@
-var submit=document.getElementById("submit_btn");
+var submit=document.getElementById("submit..btn");
 submit.onlick=function(){
   var request=new XMLHttpRequest();
   
