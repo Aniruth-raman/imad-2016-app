@@ -114,7 +114,7 @@ app.post('/login',function(req,res){
        }
        else
        {
-           if(request.rows.length===0){
+           if(result.rows.length===0){
        res.status(403).send("Username/Password is Invalid");
            }else{
            var dbString=result.rows[0].password;
@@ -127,7 +127,7 @@ app.post('/login',function(req,res){
        res.status(403).send("Username/Password is Invalid"); 
            }
            
-           res.send("User Successfully Created"+username);
+        //   res.send("User Successfully Created"+username);
        }    
        }
     });
