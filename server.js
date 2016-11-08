@@ -8,7 +8,6 @@ var bodyParser=require('body-parser');
 var config = {
   host: 'db.imad.hasura-app.io',
   user: 'aniruth-raman',
-  //password: 'bar',
   database: 'aniruth-raman',
   port: '5432', 
   password: process.env.DB_PASSWORD, 
