@@ -1,30 +1,34 @@
 <!doctype html>
 <html>
     <head>
-        <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">-->
-        <link href="/ui/style.css" rel="stylesheet" />    
+        <link href="/ui/style.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     </head>
-    <body>
-        <div class="center">
-            <img id="madi" src="/ui/madi.png" class="img-medium"/>
-        </div>
-        <br>
-        <div>
-            Hi! I am Aniruth, and this is my first web-app
-        </div>
-        <hr/>
-        <h4>Personal</h4>
-        <div>
-            I am a student of SASTRA University.
-        </div>
-        <i class="fa fa-facebook"></i>
-        <h4>Login Here</h4>
-       <div>
-        <input type="text" id="username" placeholder="username"/>
-        <input type="password" id="password"/>
-          <input type="submit" id="submit_btn"/>
-        </div>
-        <div class="footer">
+    <body background=bg.jpg>
+        <span class="avatar"><img src="/ui/avatar.jpg"/></span>
+        <div class="container">
+            <div class="center">
+                <h1>Hi,This is Aniruth</h1>
+                <h2>I'm studying <b>Information and Communication Technology</b> in <b> <br>SASTRA University</b></h2>
+            </div>
+            <div class="center">
+            <ul class="icons">
+							<li><a href="https://www.facebook.com/aniruth.raghuraman" target="_blank" title="Facebook" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="https://github.com/Aniruth-raman" target="_blank" title="Github" class="icon style2 fa-github"><span class="label">Github</span></a></li>
+							<li><a href="http://www.linkedin.com/in/aniruth-raghuraman"target="_blank" title="LinkedIn" class="icon style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="mailto:aniruth.raman5@gmail.com"title="Email" class="icon style2 fa-envelope-o"><span class="label">Email</span></a></li>
+                            </ul></div>
+            <hr/>
+            <div id="login_area">
+                <center><button id="dummy" class="button">Login/Register</button></center>
+            </div>
+            <hr/>
+            <h3>My Articles</h3>
+            <div id="articles">
+                <center>Loading articles...</center>
+            </div>
+            <div class="footer">
+            </div>
         </div>
         <script type="text/javascript" src="/ui/main.js">
         </script>
