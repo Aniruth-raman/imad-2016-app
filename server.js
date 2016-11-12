@@ -73,7 +73,6 @@ app.get('/', function (req, res) {
 
 
 function hash (input, salt) {
-    // How do we create a hash?
     var hashed = crypto.pbkdf2Sync(input, salt, 10000, 512, 'sha512');
     return ["pbkdf2", "10000", salt, hashed.toString('hex')].join('$');
 }
@@ -85,9 +84,6 @@ app.get('/hash/:input', function(req, res) {
 });
 
 app.post('/create-user', function (req, res) {
-   // username, password
-   // {"username": "tanmai", "password": "password"}
-   // JSON
    var username = req.body.username;
    var password = req.body.password;
    var salt = crypto.randomBytes(128).toString('hex');
@@ -100,11 +96,9 @@ app.post('/create-user', function (req, res) {
       }
    });
 });
-
 app.post('/login', function (req, res) {
    var username = req.body.username;
    var password = req.body.password;
-   
    pool.query('SELECT * FROM "user" WHERE username = $1', [username], function (err, result) {
       if (err) {
           res.status(500).send(err.toString());
@@ -117,7 +111,6 @@ app.post('/login', function (req, res) {
               var salt = dbString.split('$')[2];
               var hashedPassword = hash(password, salt); // Creating a hash based on the password submitted and the original salt
               if (hashedPassword === dbString) {
-                
                 // Set the session
                 req.session.auth = {userId: result.rows[0].id};
                 // set cookie with a session id
@@ -167,7 +160,6 @@ app.get('/get-articles', function (req, res) {
       }
    });
 });
-
 app.get('/get-comments/:articleName', function (req, res) {
    // make a select request
    // return a response with the results
