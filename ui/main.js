@@ -33,7 +33,7 @@ function loadLoginForm () {
         request.open('POST', '/login', true);
         request.setRequestHeader('Content-Type', 'application/json');
         request.send(JSON.stringify({username: username, password: password}));  
-        submit.value = '<b>Logging in...</b>';
+        submit.value = 'Logging in...';
     };
     var register = document.getElementById('register_btn');
     register.onclick = function () {
