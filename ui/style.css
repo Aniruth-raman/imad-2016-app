@@ -304,6 +304,7 @@ input[type="text"],
 		padding:4 1em;
 		text-decoration: none;
 		width: 32%;
+		height:10%;
 	}
 
 		input[type="text"]:invalid,
