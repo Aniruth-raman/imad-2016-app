@@ -43,7 +43,6 @@ function loadLogin () {
     request.open('GET', '/check-login', true);
     request.send(null);
 }
-
 function escapeHTML (text)
 {
     var $text = document.createTextNode(text);
@@ -51,7 +50,6 @@ function escapeHTML (text)
     $div.appendChild($text);
     return $div.innerHTML;
 }
-
 function loadComments () {
     var request = new XMLHttpRequest();
     request.onreadystatechange = function () {
