@@ -12,8 +12,8 @@ function loadLoginForm () {
     d.onclick = function () {
         document.getElementById('login_area').innerHTML = loginHtml;
         };
-    
-        var submit = document.getElementById('login_btn');
+    var submit = d.getElementById('login_btn');
+        // var submit = document.getElementById('login_btn');
     submit.onclick = function () {
         var request = new XMLHttpRequest();
         request.onreadystatechange = function () {
