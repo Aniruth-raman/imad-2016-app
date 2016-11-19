@@ -41,8 +41,8 @@ function createTemplate (data) {
       <body background=/ui/bg.jpg>
           <div class="container">
               <div>
-              <a href="/" title="Home" class="icon style2 fa-home">
-// </a><a href="/">Home</a>
+              <a href="/" title="Home" class="icon style2 fa-home"></a>
+              <!-- <a href="/">Home</a> -->
               </div>
               <hr/>
               <h3>
