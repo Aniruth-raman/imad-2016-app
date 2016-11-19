@@ -1,18 +1,13 @@
 function loadLoginForm () {
     var loginHtml = `
-        <h3>Login/Register</h3>
+        <h2>Login/Register</h2>
         <input type="text" id="username" placeholder="username" /><br/>
         <input type="password" id="password" placeholder="password" />
         <br/><br/>
         <input type="submit" id="login_btn" value="Login" />
         <input type="submit" id="register_btn" value="Register" />
         `;
-        
-    // var d = document.getElementById('dummy');
-    // d.onclick = function () {
         document.getElementById('login_area').innerHTML = loginHtml;
-        // };
-    // var submit = d.getElementById('login_btn');
          var submit = document.getElementById('login_btn');
     submit.onclick = function () {
         var request = new XMLHttpRequest();
