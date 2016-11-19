@@ -42,7 +42,6 @@ function createTemplate (data) {
           <div class="container">
               <div>
               <a href="/" title="Home" class="icon style2 fa-home"><span class="label">Home</span></a>
-              <!-- <a href="/">Home</a> -->
               </div>
               <hr/>
               <h3>
