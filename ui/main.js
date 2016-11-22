@@ -33,7 +33,10 @@ document.getElementById('login_area').innerHTML = loginHtml;
               loadLogin();
           }  
         };
-        
+        if (username == '' || password == '') {
+        alert("Username/Password field can't be left empty");
+        return;
+    }
         var username = document.getElementById('username').value;
         var password = document.getElementById('password').value;
         request.open('POST', '/login', true);
@@ -55,6 +58,10 @@ document.getElementById('login_area').innerHTML = loginHtml;
               }
           }
         };
+         if (username == '' || password == '') {
+        alert("Username/Password field can't be left empty");
+        return;
+    }
         var username = document.getElementById('username').value;
         var password = document.getElementById('password').value;
         console.log(username);
