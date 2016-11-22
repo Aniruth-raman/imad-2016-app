@@ -12,9 +12,7 @@ var logreg=document.getElementById('login/register');
 logreg.onclick=function(){
         
 document.getElementById('login_area').innerHTML = loginHtml;
-        
-};
-         var submit = document.getElementById('login_btn');
+          var submit = document.getElementById('login_btn');
     submit.onclick = function () {
         var request = new XMLHttpRequest();
         request.onreadystatechange = function () {
@@ -72,6 +70,8 @@ document.getElementById('login_area').innerHTML = loginHtml;
         register.value = 'Registering...';
     };
 }
+};
+       
 function loadLoggedInUser (username) {
     var loginArea = document.getElementById('login_area');
     loginArea.innerHTML = `
