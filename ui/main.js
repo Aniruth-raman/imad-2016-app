@@ -7,13 +7,13 @@ function loadLoginForm () {
         <input type="submit" id="login_btn" value="Login" />
         <input type="submit" id="register_btn" value="Register" />
         `;
-    // var logreg=document.getElementById('login/register');
+var logreg=document.getElementById('login/register');
         
-// logreg.onclick=function(){
+logreg.onclick=function(){
         
 document.getElementById('login_area').innerHTML = loginHtml;
         
-//  };
+};
          var submit = document.getElementById('login_btn');
     submit.onclick = function () {
         var request = new XMLHttpRequest();
