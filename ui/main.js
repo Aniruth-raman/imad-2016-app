@@ -33,12 +33,13 @@ document.getElementById('login_area').innerHTML = loginHtml;
               loadLogin();
           }  
         };
-        if (username == '' || password == '') {
+       
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+         if (username == '' || password == '') {
         alert("Username/Password field can't be left empty");
         return;
     }
-        var username = document.getElementById('username').value;
-        var password = document.getElementById('password').value;
         request.open('POST', '/login', true);
         request.setRequestHeader('Content-Type', 'application/json');
         request.send(JSON.stringify({username: username, password: password}));  
@@ -58,14 +59,13 @@ document.getElementById('login_area').innerHTML = loginHtml;
               }
           }
         };
-         if (username == '' || password == '') {
+         
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+        if (username == '' || password == '') {
         alert("Username/Password field can't be left empty");
         return;
     }
-        var username = document.getElementById('username').value;
-        var password = document.getElementById('password').value;
-        console.log(username);
-        console.log(password);
         request.open('POST', '/create-user', true);
         request.setRequestHeader('Content-Type', 'application/json');
         request.send(JSON.stringify({username: username, password: password}));  
