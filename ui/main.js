@@ -90,7 +90,7 @@ function loadArticleForm() {
                   alert('Article created successfully');
                   store.value = 'Article Created';
               } else {
-                  alert('Could not register the user');
+                  alert('Article could not be created');
                   store.value = 'Create Article';
               }
           }
