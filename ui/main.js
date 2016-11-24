@@ -80,8 +80,6 @@ function loadArticleForm() {
         <textarea rows="4" cols="50" id="content" placeholder="Content" /></textarea><br/>
         <input type="submit" id="save_btn" value="Create Article" />
         `;
-        var writeart=document.getElementById('article_area');
-writeart.onclick=function(){
         document.getElementById('article_area').innerHTML = articleHtml;
          var store = document.getElementById('save_btn');
     store.onclick = function () {
