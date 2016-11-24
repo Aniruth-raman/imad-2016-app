@@ -90,6 +90,7 @@ function loadArticleForm() {
                   alert('Article created successfully');
                   store.value = 'Article Created';
                   res.redirect('back');
+                  location.reload(true);
               } else {
                   alert('Article could not be created');
                   store.value = 'Create Article';
