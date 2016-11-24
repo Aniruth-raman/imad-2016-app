@@ -8,9 +8,7 @@ function loadLoginForm () {
         <input type="submit" id="register_btn" value="Register" />
         `;
 var logreg=document.getElementById('login/register');
-        
 logreg.onclick=function(){
-        
 document.getElementById('login_area').innerHTML = loginHtml;
           var submit = document.getElementById('login_btn');
     submit.onclick = function () {
@@ -81,8 +79,8 @@ function loadArticleForm() {
         <input type="submit" id="save_btn" value="Create Article" />
         `;
         document.getElementById('article_area').innerHTML = articleHtml;
-         var store = document.getElementById('save_btn');
-    store.onclick = function () {
+        var store = document.getElementById('save_btn');
+        store.onclick = function () {
         var request = new XMLHttpRequest();
         request.onreadystatechange = function () {
           if (request.readyState === XMLHttpRequest.DONE) {
@@ -94,7 +92,6 @@ function loadArticleForm() {
                   alert('Article could not be created');
                   store.value = 'Create Article';
               }
-              loadArticle();
           }
         };
 var heading = document.getElementById('heading').value;
@@ -128,20 +125,20 @@ function loadLogin () {
     request.open('GET', '/check-login', true);
     request.send(null);
 }
-function loadArticle () {
-    var request = new XMLHttpRequest();
-    request.onreadystatechange = function () {
-        if (request.readyState === XMLHttpRequest.DONE) {
-            if (request.status === 200) {
-                loadLoggedInUser(this.responseText);
-            } else {
-                loadArticleForm();
-            }
-        }
-    };
-    request.open('GET', '/check-login', true);
-    request.send(null);
-}
+// function loadArticle () {
+//     var request = new XMLHttpRequest();
+//     request.onreadystatechange = function () {
+//         if (request.readyState === XMLHttpRequest.DONE) {
+//             if (request.status === 200) {
+//                 loadLoggedInUser(this.responseText);
+//             } else {
+//                 loadArticleForm();
+//             }
+//         }
+//     };
+//     request.open('GET', '/check-login', true);
+//     request.send(null);
+// }
 function loadArticles () {
     var request = new XMLHttpRequest();
     request.onreadystatechange = function () {
