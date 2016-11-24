@@ -77,7 +77,7 @@ function loadArticleForm() {
         <h2>Write an Article</h2>
         <input type="text" id="heading" placeholder="heading" /><br/>
         <input type="text" id="title" placeholder="title" /><br/>
-        <textarea rows="4" cols="50" id="content" placeholder="Content" /><br/>
+        <textarea rows="4" cols="50" id="content" placeholder="Content" /></textarea><br/>
         <input type="submit" id="save_btn" value="Create Article" />
         `;
         document.getElementById('article_area').innerHTML = articleHtml;
