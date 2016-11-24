@@ -89,7 +89,6 @@ function loadArticleForm() {
               if (request.status === 200) {
                   alert('Article created successfully');
                   store.value = 'Article Created';
-                  reload(true);
               } else {
                   alert('Article could not be created');
                   store.value = 'Create Article';
