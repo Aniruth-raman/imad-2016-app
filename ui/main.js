@@ -87,11 +87,12 @@ function loadArticleForm() {
               if (request.status === 200) {
                   alert('Article created successfully');
                   store.value = 'Article Created';
-                  } 
+              } 
                   else {
                   alert('Article could not be created');
                   store.value = 'Create Article';
               }
+              res.redirect('back');
           }
         };
 var heading = document.getElementById('heading').value;
