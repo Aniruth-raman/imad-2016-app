@@ -34,7 +34,7 @@ document.getElementById('login_area').innerHTML = loginHtml;
        
         var username = document.getElementById('username').value;
         var password = document.getElementById('password').value;
-         if (username == '' || password == '') {
+         if (username === '' || password === '') {
         alert("Username/Password field can't be left empty");
         return;
     }
@@ -60,7 +60,7 @@ document.getElementById('login_area').innerHTML = loginHtml;
          
         var username = document.getElementById('username').value;
         var password = document.getElementById('password').value;
-        if (username == '' || password == '') {
+        if (username === '' || password === '') {
         alert("Username/Password field can't be left empty");
         return;
     }
@@ -69,9 +69,38 @@ document.getElementById('login_area').innerHTML = loginHtml;
         request.send(JSON.stringify({username: username, password: password}));  
         register.value = 'Registering...';
     };
+
 }
 };
-       
+function loadArticleForm () {
+    var articleHtml = `
+        <h2>Write an Article</h2>
+        <input type="text" id="heading" placeholder="heading" /><br/>
+        <input type="text" id="title" placeholder="title" /><br/>
+        <input type="text" id="content" placeholder="Content" /><br/>
+        <input type="submit" id="save_btn" value="Create Article" />
+        `;
+        document.getElementById('article_area').innerHTML = articleHtml;
+         var store = document.getElementById('save_btn');
+    store.onclick = function () {
+        var request = new XMLHttpRequest();
+        request.onreadystatechange = function () {
+          if (request.readyState === XMLHttpRequest.DONE) {
+              if (request.status === 200) {
+                  alert('Article created successfully');
+                  store.value = 'Article Created';
+              } else {
+                  alert('Could not register the user');
+                  store.value = 'Create Article';
+              }
+          }
+        };
+        request.open('POST', '/create-article', true);
+        request.setRequestHeader('Content-Type', 'application/json');
+        request.send(JSON.stringify({heading: heading, title: title, content: content}));  
+        register.value = 'Creating...';
+    };
+};
 function loadLoggedInUser (username) {
     var loginArea = document.getElementById('login_area');
     loginArea.innerHTML = `
