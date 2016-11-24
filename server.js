@@ -147,7 +147,7 @@ app.get('/logout', function (req, res) {
    delete req.session.auth;
     //   res.send('<html><head> <link href="/ui/style.css" rel="stylesheet" /></head><body background=/ui/bg.jpg><div class="container"><h1>Logged out!</h1><br/><br/><a href="/"><h3>Back to home</h3></a></div></body></html>');
     // res.sendFile(path.join(__dirname, 'ui', 'index.html'));
-    window.location.replace("/");
+    window.location.replace("http://aniruth-raman.imad.hasura-app.io");
 });
 
 var pool = new Pool(config);
