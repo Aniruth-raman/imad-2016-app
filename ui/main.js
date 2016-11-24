@@ -80,6 +80,8 @@ function loadArticleForm() {
         <textarea rows="4" cols="50" id="content" placeholder="Content" /></textarea><br/>
         <input type="submit" id="save_btn" value="Create Article" />
         `;
+        var writeart=document.getElementById('article_area');
+writeart.onclick=function(){
         document.getElementById('article_area').innerHTML = articleHtml;
          var store = document.getElementById('save_btn');
     store.onclick = function () {
@@ -89,12 +91,12 @@ function loadArticleForm() {
               if (request.status === 200) {
                   alert('Article created successfully');
                   store.value = 'Article Created';
-                  res.redirect('back');
-                  location.reload(true);
-              } else {
+                  } 
+                  else {
                   alert('Article could not be created');
                   store.value = 'Create Article';
               }
+              loadArticle();
           }
         };
 var heading = document.getElementById('heading').value;
@@ -121,7 +123,20 @@ function loadLogin () {
                 loadLoggedInUser(this.responseText);
             } else {
                 loadLoginForm();
-            
+                loadArticleForm();
+            }
+        }
+    };
+    request.open('GET', '/check-login', true);
+    request.send(null);
+}
+function loadArticle () {
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+        if (request.readyState === XMLHttpRequest.DONE) {
+            if (request.status === 200) {
+                loadLoggedInUser(this.responseText);
+            } else {
                 loadArticleForm();
             }
         }
