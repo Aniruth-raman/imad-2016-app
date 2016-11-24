@@ -72,7 +72,7 @@ document.getElementById('login_area').innerHTML = loginHtml;
 
 }
 };
-function loadArticleForm () {
+function loadArticleForm() {
     var articleHtml = `
         <h2>Write an Article</h2>
         <input type="text" id="heading" placeholder="heading" /><br/>
@@ -116,6 +116,8 @@ function loadLogin () {
                 loadLoggedInUser(this.responseText);
             } else {
                 loadLoginForm();
+            
+                loadArticleForm();
             }
         }
     };
