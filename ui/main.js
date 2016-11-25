@@ -70,6 +70,53 @@ document.getElementById('login_area').innerHTML = loginHtml;
 
 }
 };
+
+function loadLoggedInUser (username) {
+    var loginArea = document.getElementById('login_area');
+    loginArea.innerHTML = `
+        <h3> Hi <i>${username}</i></h3>
+        <a href="/logout">Logout</a>
+    `;
+}
+function loadLogin () {
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+        if (request.readyState === XMLHttpRequest.DONE) {
+            if (request.status === 200) {
+                loadLoggedInUser(this.responseText);
+            } else {
+                loadLoginForm();
+                loadArticleForm();
+            }
+        }
+    };
+    request.open('GET', '/check-login', true);
+    request.send(null);
+}
+function loadArticles () {
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+        if (request.readyState === XMLHttpRequest.DONE) {
+            var articles = document.getElementById('articles');
+            if (request.status === 200) {
+                var content = '<ul>';
+                var articleData = JSON.parse(this.responseText);
+                for (var i=0; i< articleData.length; i++) {
+                    content += `<li>
+                    <a href="/articles/${articleData[i].title}">${articleData[i].heading}</a>
+                    (${articleData[i].date.split('T')[0]})</li>`;
+                }
+                content += "</ul>"
+                articles.innerHTML = content;
+            } else {
+                articles.innerHTML('Oops! Could not load all articles!')
+            }
+        }
+    };
+    
+    request.open('GET', '/get-articles', true);
+    request.send(null);
+}
 function loadArticleForm() {
 	//added form tag and required attributes
     var articleHtml = `
@@ -116,52 +163,6 @@ function loadArticleForm() {
         request.send(JSON.stringify({heading: heading, title: title, content: content}));  
         store.value = 'Creating...';
     };
-}
-function loadLoggedInUser (username) {
-    var loginArea = document.getElementById('login_area');
-    loginArea.innerHTML = `
-        <h3> Hi <i>${username}</i></h3>
-        <a href="/logout">Logout</a>
-    `;
-}
-function loadLogin () {
-    var request = new XMLHttpRequest();
-    request.onreadystatechange = function () {
-        if (request.readyState === XMLHttpRequest.DONE) {
-            if (request.status === 200) {
-                loadLoggedInUser(this.responseText);
-            } else {
-                loadLoginForm();
-                loadArticleForm();
-            }
-        }
-    };
-    request.open('GET', '/check-login', true);
-    request.send(null);
-}
-function loadArticles () {
-    var request = new XMLHttpRequest();
-    request.onreadystatechange = function () {
-        if (request.readyState === XMLHttpRequest.DONE) {
-            var articles = document.getElementById('articles');
-            if (request.status === 200) {
-                var content = '<ul>';
-                var articleData = JSON.parse(this.responseText);
-                for (var i=0; i< articleData.length; i++) {
-                    content += `<li>
-                    <a href="/articles/${articleData[i].title}">${articleData[i].heading}</a>
-                    (${articleData[i].date.split('T')[0]})</li>`;
-                }
-                content += "</ul>"
-                articles.innerHTML = content;
-            } else {
-                articles.innerHTML('Oops! Could not load all articles!')
-            }
-        }
-    };
-    
-    request.open('GET', '/get-articles', true);
-    request.send(null);
 }
 loadLogin();
 loadArticles();
