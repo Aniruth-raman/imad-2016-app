@@ -92,8 +92,9 @@ function loadArticleForm() {
           if (request.readyState === XMLHttpRequest.DONE) {
               if (request.status === 200) {
                   alert('Article created successfully');
+		  location.reload(true);
 		  //reset the form
-		  article_form.reset();
+		  //article_form.reset();
 		  //now, load the articles dynamically
 		  loadArticles();
               }else if(request.status === 403){ //for alerting users to register/login to create article
@@ -138,20 +139,6 @@ function loadLogin () {
     request.open('GET', '/check-login', true);
     request.send(null);
 }
-// function loadArticle () {
-//     var request = new XMLHttpRequest();
-//     request.onreadystatechange = function () {
-//         if (request.readyState === XMLHttpRequest.DONE) {
-//             if (request.status === 200) {
-//                 loadLoggedInUser(this.responseText);
-//             } else {
-//                 loadArticleForm();
-//             }
-//         }
-//     };
-//     request.open('GET', '/check-login', true);
-//     request.send(null);
-// }
 function loadArticles () {
     var request = new XMLHttpRequest();
     request.onreadystatechange = function () {
