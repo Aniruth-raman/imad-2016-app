@@ -38,7 +38,7 @@ function createTemplate (data) {
     <html>
       <head>
           <title>
-              ${escapeHTML(title)}
+              ${title}
         </title>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link href="/ui/style.css" rel="stylesheet" />
@@ -51,13 +51,13 @@ function createTemplate (data) {
               </div>
               <hr/>
               <h3>
-                  ${escapeHTML(heading)}
+                  ${heading}
               </h3>
               <div>
                   ${date.toDateString()}
               </div>
               <div>
-                ${escapeHTML(content)}
+                ${content}
               </div>
               <hr/>
               <h4>Comments</h4>
