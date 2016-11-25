@@ -74,19 +74,19 @@ function loadArticleForm() {
 	//added form tag and required attributes
     var articleHtml = `
         <h2>Write an Article</h2>
-	<form id="article_form">
+// 	<form id="article_form">
         <input type="text" id="heading" placeholder="Heading" required/><br/>
         <input type="text" id="title" placeholder="Title" required/><br/>
         <textarea rows="4" cols="50" id="content" placeholder="Content" required></textarea><br/>
         <input type="submit" id="save_btn" value="Create Article" />
-	</form>
+// 	</form>
         `;
         document.getElementById('article_area').innerHTML = articleHtml;
         var store = document.getElementById('save_btn');
 	//handling onsubmit event of form
-	var article_form=document.getElementById('article_form');
-        article_form.onsubmit = function (e) {
-	e.preventDefault();//prevent default form submission
+// 	var article_form=document.getElementById('article_form');
+        // article_form.onsubmit = function (e) {
+// 	e.preventDefault();//prevent default form submission
         var request = new XMLHttpRequest();
         request.onreadystatechange = function () {
           if (request.readyState === XMLHttpRequest.DONE) {
