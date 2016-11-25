@@ -92,9 +92,9 @@ function loadArticleForm() {
           if (request.readyState === XMLHttpRequest.DONE) {
               if (request.status === 200) {
                   alert('Article created successfully');
-		  location.reload(true);
+		  //location.reload(true);
 		  //reset the form
-		  //article_form.reset();
+		  article_form.reset();
 		  //now, load the articles dynamically
 		  loadArticles();
               }else if(request.status === 403){ //for alerting users to register/login to create article
