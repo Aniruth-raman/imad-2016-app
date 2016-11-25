@@ -32,7 +32,7 @@ document.getElementById('login_area').innerHTML = loginHtml;
        
         var username = document.getElementById('username').value;
         var password = document.getElementById('password').value;
-         if (username === '' || password === '') {
+         if (username.trim() === '' || password.trim() === '') {
         alert("Username/Password field can't be left empty");
         return;
     }
@@ -58,7 +58,7 @@ document.getElementById('login_area').innerHTML = loginHtml;
          
         var username = document.getElementById('username').value;
         var password = document.getElementById('password').value;
-        if (username === '' || password === '') {
+        if (username.trim() === '' || password.trim() === '') {
         alert("Username/Password field can't be left empty");
         return;
     }
