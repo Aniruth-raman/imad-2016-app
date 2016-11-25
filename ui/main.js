@@ -166,7 +166,7 @@ function loadArticleForm() {
 	var content = document.getElementById('content').value;
         request.open('POST', '/create-article', true);
         request.setRequestHeader('Content-Type', 'application/json');
-        request.send(JSON.stringify({heading: ${escapeHTML(heading)}, title:${escapeHTML(title)} , content:${escapeHTML(content)}}));  
+        request.send(JSON.stringify({heading:heading, title:title , content:content}));  
         store.value = 'Creating...';
     };
 }
