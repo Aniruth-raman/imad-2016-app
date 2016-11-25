@@ -21,7 +21,13 @@ app.use(session({
     secret: 'someRandomSecretValue',
     cookie: { maxAge: 1000 * 60 * 60 * 24 * 30}
 }));
-
+function escapeHTML (text)
+{
+    var $text = document.createTextNode(text);
+    var $div = document.createElement('div');
+    $div.appendChild($text);
+    return $div.innerHTML;
+}
 function createTemplate (data) {
     var title = data.title;
     var date = data.date;
@@ -32,8 +38,8 @@ function createTemplate (data) {
     <html>
       <head>
           <title>
-              ${title}
-          </title>
+              ${escapeHTML(title)}
+        </title>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link href="/ui/style.css" rel="stylesheet" />
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
@@ -45,13 +51,13 @@ function createTemplate (data) {
               </div>
               <hr/>
               <h3>
-                  ${heading}
+                  ${escapeHTML(heading)}
               </h3>
               <div>
                   ${date.toDateString()}
               </div>
               <div>
-                ${content}
+                ${escapeHTML(content)}
               </div>
               <hr/>
               <h4>Comments</h4>
