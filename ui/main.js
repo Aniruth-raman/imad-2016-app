@@ -154,12 +154,19 @@ function loadArticleForm() {
 		  store.value = 'Create Article';
           }
         };
+        function escapeHTML (text)
+{
+    var $text = document.createTextNode(text);
+    var $div = document.createElement('div');
+    $div.appendChild($text);
+    return $div.innerHTML;
+}
 	var heading = document.getElementById('heading').value;
 	var title = document.getElementById('title').value;
 	var content = document.getElementById('content').value;
         request.open('POST', '/create-article', true);
         request.setRequestHeader('Content-Type', 'application/json');
-        request.send(JSON.stringify({heading: heading, title: title, content: content}));  
+        request.send(JSON.stringify({heading: ${escapeHTML(heading)}, title:${escapeHTML(title)} , content:${escapeHTML(content)}}));  
         store.value = 'Creating...';
     };
 }
