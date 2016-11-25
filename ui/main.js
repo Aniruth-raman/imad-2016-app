@@ -86,8 +86,7 @@ function loadLogin () {
                 loadLoggedInUser(this.responseText);
             } else {
                 loadLoginForm();
-                loadArticleForm();
-            }
+                }
         }
     };
     request.open('GET', '/check-login', true);
@@ -166,3 +165,4 @@ function loadArticleForm() {
 }
 loadLogin();
 loadArticles();
+loadArticleForm();
