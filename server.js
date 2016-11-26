@@ -5,7 +5,6 @@ var Pool = require('pg').Pool;
 var crypto = require('crypto');
 var bodyParser = require('body-parser');
 var session = require('express-session');
-var xssFilters = require('xss-filters');
 
 var config = {
     user: 'aniruth-raman',
@@ -39,7 +38,7 @@ function createTemplate (data) {
     <html>
       <head>
           <title>
-               xssFilters.inHTMLData(title)
+               ${title}
         </title>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link href="/ui/style.css" rel="stylesheet" />
@@ -52,13 +51,13 @@ function createTemplate (data) {
               </div>
               <hr/>
               <h3>
-                 xssFilters.inHTMLData(heading)
+                 ${heading}
               </h3>
               <div>
                   ${date.toDateString()}
               </div>
               <div>
-                 xssFilters.inHTMLData(content)
+                 ${content}
               </div>
               <hr/>
               <h4>Comments</h4>
