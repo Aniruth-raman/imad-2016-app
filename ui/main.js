@@ -154,13 +154,6 @@ function loadArticleForm() {
 		  store.value = 'Create Article';
           }
         };
-        function escapeHTML (text)
-{
-    var $text = document.createTextNode(text);
-    var $div = document.createElement('div');
-    $div.appendChild($text);
-    return $div.innerHTML;
-}
 	var heading = document.getElementById('heading').value;
 	var title = document.getElementById('title').value;
 	var content = document.getElementById('content').value;
