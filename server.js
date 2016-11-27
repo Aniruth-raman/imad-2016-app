@@ -32,7 +32,7 @@ function createTemplate (data) {
     var title = data.title;
     var date = data.date;
     var heading = data.heading;
-    var content = escapeHTML(data.content);
+    var content = data.content;
     
     var htmlTemplate = `
     <html>
@@ -57,7 +57,7 @@ function createTemplate (data) {
                   ${date.toDateString()}
               </div>
               <div>
-                 ${content}
+                 escapeHTML(content);
               </div>
               <hr/>
               <h4>Comments</h4>
