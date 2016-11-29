@@ -21,19 +21,19 @@ app.use(session({
     secret: 'someRandomSecretValue',
     cookie: { maxAge: 1000 * 60 * 60 * 24 * 30}
 }));
+
+function createTemplate (data) {
+    var title = data.title;
+    var date = data.date;
+    var heading = data.heading;
+    var content = data.content;
 function escapeHTML (text)
 {
     var $text = document.createTextNode(text);
     var $div = document.createElement('div');
     $div.appendChild($text);
     return $div.innerHTML;
-}
-function createTemplate (data) {
-    var title = data.title;
-    var date = data.date;
-    var heading = data.heading;
-    var content = data.content;
-    
+}    
     var htmlTemplate = `
     <html>
       <head>
@@ -57,7 +57,7 @@ function createTemplate (data) {
                   ${date.toDateString()}
               </div>
               <div>
-                ${content}
+                ${escapeHTML(content)}
               </div>
               <hr/>
               <h4>Comments</h4>
