@@ -57,7 +57,7 @@ function createTemplate (data) {
                   ${date.toDateString()}
               </div>
               <div>
-                 res.send(escapeHTML(content));
+                ${res.send(escapeHTML(content))}
               </div>
               <hr/>
               <h4>Comments</h4>
