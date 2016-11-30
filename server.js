@@ -101,6 +101,12 @@ app.post('/create-user', function (req, res) {
        alert("Username/password cannot be blank");
        //return;
    }
+   if(!/^[a-zA-Z0-9_#.]+$/.test(username))
+   {  //If username contains other than a-z,A-Z,0-9 then true.
+                 res.status(400).send('Your username contains special characters other than _#.');
+        }
+        else{
+              //Accept username and process
    pool.query('INSERT INTO "user" (username, password) VALUES ($1, $2)', [username, dbString], function (err, result) {
       if (err) {
           res.status(500).send(err.toString());
@@ -108,6 +114,8 @@ app.post('/create-user', function (req, res) {
           res.send('User successfully created: ' + username);
       }
    });
+         }
+   
 });
 app.post('/create-article', function (req, res) {
 if (req.session && req.session.auth && req.session.auth.userId) {
