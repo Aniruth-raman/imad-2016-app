@@ -99,7 +99,7 @@ app.post('/create-user', function (req, res) {
    var dbString = hash(password, salt);
    if(username.trim()===''||password.trim()===''){
        alert("Username/password cannot be blank");
-       return;
+       //return;
    }
    pool.query('INSERT INTO "user" (username, password) VALUES ($1, $2)', [username, dbString], function (err, result) {
       if (err) {
@@ -131,7 +131,7 @@ app.post('/login', function (req, res) {
    var password = req.body.password;
    if(username.trim()===''||password.trim()===''){
        alert("Username/Password cannot be blank");
-       return;
+       //return;
    }
    pool.query('SELECT * FROM "user" WHERE username = $1', [username], function (err, result) {
       if (err) {
