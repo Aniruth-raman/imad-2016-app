@@ -21,18 +21,21 @@ app.use(session({
     secret: 'someRandomSecretValue',
     cookie: { maxAge: 1000 * 60 * 60 * 24 * 30}
 }));
-function escapeHTML (text)
-{
-    var $text = document.createTextNode(text);
-    var $div = document.createElement('div');
-    $div.appendChild($text);
-    return $div.innerHTML;
+function escapeHTML(s) {
+return s.replace(/[&"<>]/g, function (c) {
+return {
+'&': "&amp;",
+'"': "&quot;",
+'<': "&lt;",
+'>': "&gt;"
+}[c];
+});
 }
 function createTemplate (data) {
     var title = data.title;
     var date = data.date;
     var heading = data.heading;
-    var content = data.content;
+    var content = escapeHTML(data.content);
     var htmlTemplate = `
     <html>
       <head>
