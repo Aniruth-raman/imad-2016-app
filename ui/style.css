@@ -354,6 +354,7 @@ ul.tab {
     margin: 0;
     padding: 0;
     overflow: hidden;
+    opacity:0.6;
     border: 1px solid #ccc;
     background-color: #f1f1f1;
 }
@@ -365,6 +366,7 @@ ul.tab li {float: left;}
 ul.tab li a {
     display: inline-block;
     color: black;
+    opacity:0.6;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -386,7 +388,6 @@ ul.tab li a:focus, .active {
 .tabcontent {
     display: none;
     padding: 6px 12px;
-    border: 1px solid #ccc;
     border-top: none;
 }
 
