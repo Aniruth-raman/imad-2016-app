@@ -356,7 +356,7 @@ ul.tab {
     overflow: hidden;
     opacity:0.6;
     border: 1px solid #ccc;
-    background-color: #f1f1f1;
+    /*background-color: #f1f1f1;*/
 }
 
 /* Float the list items side by side */
