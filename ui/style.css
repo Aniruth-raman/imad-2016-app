@@ -355,7 +355,7 @@ ul.tab {
     padding: 0;
     overflow: hidden;
     opacity:0.6;
-    border: 1px solid #ccc;
+    /*border: 1px solid #ccc;*/
     /*background-color: #f1f1f1;*/
 }
 
