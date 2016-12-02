@@ -8,26 +8,36 @@
     <body background=/ui/bg.jpg>
         <span class="avatar"><img src="/ui/avatar.jpg"/></span>
         <div class="container">
-            <div class="center">
-                <h1>Hi,This is Aniruth</h1>
-                <h2>I'm studying <strong>Information and Communication Technology</strong> in <strong> <br>SASTRA University</strong></h2>
-                <h2>My Basic Interests are:</h2>
+            <ul class="tab">
+  <li><a href="javascript:void(0)" class="tablinks" onclick="openlink(event, 'About')" id="defaultOpen">About</a></li>
+  <li><a href="javascript:void(0)" class="tablinks" onclick="openliink(event, 'Interests')">Interests</a></li>
+  <li><a href="javascript:void(0)" class="tablinks" onclick="openlink(event, 'Languages')">Technical Skills</a></li>
+</ul>
+<div id="About" class="tabcontent center">
+  <span onclick="this.parentElement.style.display='none'" class="topright">x</span>
+  <h3>About</h3>
+  <h1>Hi,This is Aniruth</h1>
+  <h2>I'm studying <strong>Information and Communication Technology</strong> in <strong> <br>SASTRA University</strong></h2>
+</div>
+<div id="Interests" class="tabcontent center">
+  <span onclick="this.parentElement.style.display='none'" class="topright">x</span>
+  <h2>My Basic Interests are:</h2>
                 <ul class="icons">
                     <li><h3>Coding</h3></li>
                     <li><h3>Writing</h3></li>
                     <li><h3>Reading</h3></li>
                 </ul>
-             <h2> I am good in these Languages</h2>
-             <ul class="icons">
-              <h3>
-                 <li> C</li>
-                 <li> C++</li>
-                 <li> HTML</li>
-                 <li> Javascript</li>
-                 <li> CSS</li>
-                 </h3>
-             </ul>
-            </div>
+</div>
+<div id="Languages" class="tabcontent center">
+  <span onclick="this.parentElement.style.display='none'" class="topright">x</span>
+  <h3>Technical Skills</h3>
+<b>Programming languages:</b>  C, C++<br />
+<b>Web Designing:</b> HTML, CSS, JS, JQuery<br />
+<b>Multimedia:</b> Adobe Photoshop<br />
+<b>Operating systems:</b> Operating in Linux Environment, Windows and Mac OS X<br />
+<b>Applications:</b> Microsoft Office, Adobe<br />
+</div>
+
             <div class="center">
             <ul class="icons">
 							<li><a href="https://www.facebook.com/aniruth.raghuraman" target="_blank" title="Facebook" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
