@@ -26,8 +26,8 @@ return s.replace(/[&"<>]/g, function (c) {
 return {
 '&': "&amp;",
 '"': "&quot;",
-'<': "&lt;",
-'>': "&gt;"
+// '<': "&lt;",
+// '>': "&gt;"
 }[c];
 });
 }
@@ -122,9 +122,6 @@ if (req.session && req.session.auth && req.session.auth.userId) {
 var title = req.body.title;
 var heading = req.body.heading;
 var content = req.body.content;
-if(title.trim()===''||heading.trim()===''){
-       alert("Title/Heading cannot be blank");
- }
 pool.query('INSERT INTO "article" (title, heading, content) VALUES ($1, $2, $3)', [title, heading, content], function (err, result) {
 if (err) {
 res.status(500).send(err.toString());
