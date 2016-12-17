@@ -22,7 +22,7 @@ app.use(session({
     cookie: { maxAge: 1000 * 60 * 60 * 24 * 30}
 }));
 function escapeHTML(s) {
-return s.replace(/[&"<>]/g, function (c) {
+return s.replace(/[&"]/g, function (c) {
 return {
 '&': "&amp;",
 '"': "&quot;",
