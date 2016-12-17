@@ -122,7 +122,7 @@ function loadArticleForm() {
         <h2>Write an Article</h2>
 	<form id="article_form">
         <input type="text" id="heading" placeholder="Heading-The Heading of your article (e.g) Article One" required/><br/>
-        <input type="text" id="title" placeholder="Title-The title of your article (e.g)article-one" required/><br/>
+        <input type="text" id="title" placeholder="Title-The title of your article (e.g)article-one" onChange="this.value=RWS(this.value)" required/><br/>
         <textarea rows="4" cols="50" id="content" placeholder="Content-Enter the content of your article" required></textarea><br/>
         <input type="submit" id="save_btn" value="Create Article" />
  	</form>
