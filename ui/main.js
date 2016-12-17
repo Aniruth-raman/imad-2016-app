@@ -145,10 +145,7 @@ function loadArticleForm() {
 		  loadArticles();
               }else if(request.status === 403){ //for alerting users to register/login to create article
                 alert('You must Register/Login to create new Article');
-	      } else if(request.status === 556){ //for alerting users to register/login to create article
-                alert('Title/Heading cannot be blank');
-	      } 
-              else {
+	      }else {
 		  //use this alert message
                   alert('Article could not be created or Article already exist!');
               }
