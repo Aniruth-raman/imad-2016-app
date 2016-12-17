@@ -124,7 +124,6 @@ var heading = req.body.heading;
 var content = req.body.content;
  if(title.trim()===''||heading.trim()===''){
        res.status(556).send("Title/Heading cannot be blank");
-       return;
  }
 pool.query('INSERT INTO "article" (title, heading, content) VALUES ($1, $2, $3)', [title, heading, content], function (err, result) {
 if (err) {
